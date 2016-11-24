@@ -37,6 +37,14 @@ Ok, so why do we keep leaving agendas on the squares we visit? Because we might 
 
 Make a maze with a dead end and test this algorithm on that!
 
+### Our implementation: recursive backtrack
+
+We'll implement our solution recursively (see `MazeSolver.markPathToEnd()`).
+
+In our implementation, to step forward to the next square, call the function recursively, passing the next square. Backtracking happens while the recursion unwinds.
+
+Backtracking can also be done using a stack, instead of recursion, but I think this is a more straightforward approach. YMMV.
+
 ### Agenda implementation
 
 In our implementation, we've kept our Agenda abstract (an interface), so we can focus on just Agenda operations in our solution, but then implement two types of Agendas: a queue version and a stack version.
