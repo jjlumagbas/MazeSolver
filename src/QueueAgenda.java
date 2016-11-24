@@ -1,10 +1,11 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class QueueAgenda implements Agenda {
+public class QueueAgenda extends Agenda {
   private Queue<Square> queue;
 
   public QueueAgenda() {
+    super(QueueAgenda.class);
     queue = new LinkedList<>();
   }
 

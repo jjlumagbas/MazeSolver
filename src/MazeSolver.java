@@ -1,9 +1,9 @@
 public class MazeSolver {
   private Maze maze;
   private Maze solvedMaze;
-  private AgendaGenerator ag;
+  private Agenda ag;
 
-  public MazeSolver(Maze maze, AgendaGenerator ag) {
+  public MazeSolver(Maze maze, Agenda ag) {
     this.maze = maze;
     this.ag = ag;
     solvedMaze = maze.clone();
@@ -13,7 +13,7 @@ public class MazeSolver {
     return markPathToEnd(solvedMaze.origin());
   }
 
-  private boolean markPathToEnd(Square sq) {
+  private boolean markPathToEnd(Square sq) throws InstantiationException, IllegalAccessException {
     // TODO 1. base case: if you're at the end (you made it!), return true
 
     // TODO 2. otherwise, mark the current square:
@@ -21,7 +21,7 @@ public class MazeSolver {
     // - as a step on the path (x)
 
     // 3. create an empty agenda of next squares to visit!
-    Agenda agenda = ag.newAgenda();
+    Agenda agenda = ag.newInstance();
     // use the generator, which will generate either a:
     // - stack agenda, or
     // - queue agenda

@@ -1,7 +1,17 @@
-public interface Agenda {
-  public void add(Square s);
+public abstract class Agenda {
+  private Class agClass;
 
-  public Square remove();
+  protected Agenda(Class agClass) {
+    this.agClass = agClass;
+  }
 
-  public int size();
+  public Agenda newInstance() throws IllegalAccessException, InstantiationException {
+    return (Agenda) agClass.newInstance();
+  }
+
+  public abstract void add(Square s);
+
+  public abstract Square remove();
+
+  public abstract int size();
 }

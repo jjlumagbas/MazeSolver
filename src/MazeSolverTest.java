@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 public class MazeSolverTest {
 
 
-  private void solve(Maze m, Maze solution, AgendaGenerator g) throws Exception {
+  private void solve(Maze m, Maze solution, Agenda g) throws Exception {
     MazeSolver ms = new MazeSolver(m, g);
     assertTrue(ms.solve());
     assertEquals(solution.toString(), ms.getSolvedMaze().toString());
@@ -14,34 +14,34 @@ public class MazeSolverTest {
 
   @Test
   public void solveStack1() throws Exception {
-    solve(maze1(), soln1(), new StackGenerator());
+    solve(maze1(), soln1(), new StackAgenda());
   }
 
   @Test
   public void solveQueue1() throws Exception {
-    solve(maze1(), soln1(), new QueueGenerator());
+    solve(maze1(), soln1(), new QueueAgenda());
   }
 
   @Test
   public void solveStack2() throws Exception {
-    solve(maze2(), soln2s(), new StackGenerator());
+    solve(maze2(), soln2s(), new StackAgenda());
   }
 
 
   @Test
   public void solveQueue2() throws Exception {
-    solve(maze2(), soln2q(), new QueueGenerator());
+    solve(maze2(), soln2q(), new QueueAgenda());
   }
 
   @Test
   public void solveStack3() throws Exception {
-    solve(maze3(), soln3s(), new StackGenerator());
+    solve(maze3(), soln3s(), new StackAgenda());
   }
 
 
   @Test
   public void solveQueue3() throws Exception {
-    solve(maze3(), soln3q(), new QueueGenerator());
+    solve(maze3(), soln3q(), new QueueAgenda());
   }
 
   private Maze maze1() {

@@ -1,9 +1,10 @@
 import java.util.Stack;
 
-public class StackAgenda implements Agenda {
+public class StackAgenda extends Agenda {
   private Stack<Square> stack;
 
   public StackAgenda() {
+    super(StackAgenda.class);
     stack = new Stack<>();
   }
 
